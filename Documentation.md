@@ -94,13 +94,31 @@ sudo apt install git
 13.  Confirm the installation when prompted by typing "Y" and pressing Enter.
     
 14.  Once the installation is complete, you can verify that Git is installed by checking its version:
-    
-
 ```
 git --version
 ```
-
 This command should display the Git version that was installed.
+
+15.  Install postgresql by running the following command:
+```
+sudo apt install postgresql postgresql-contrib
+```
+16. Start and Enable PostgreSQL Service
+```
+sudo systemctl start postgresql
+```
+To ensure that PostgreSQL starts on boot, you can enable the service:
+```
+sudo systemctl enable postgresql
+```
+17. check the status of postgresql
+```
+sudo systemctl status postgresql
+```
+18.Access PostgreSQL
+```
+psql postgresql://postgres:abcd1234@flask_dbcolor_vision_test_db:5432/color_vision
+```
 
 Clone the repository containing the code for frontend and backend applications. the repository has two folders: docker-frontend and docker-backend.
 
@@ -334,6 +352,7 @@ The -d flag runs the containers in the background.
 docker ps -a
 ```
 ![image](https://github.com/akii2137/akii2137/assets/130637600/bdfeb447-85d3-46d9-a926-d8ffce9bcafd)
+
 
 **On the server where Docker is running, navigate to the respective directory and pull the latest changes:**
 
